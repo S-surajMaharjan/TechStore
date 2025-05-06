@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    background-color: #1e1e2f;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.search-bar input {
+    padding: 8px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+}
+
+.nav-icons span {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 350px;
+    margin: 20px 0;
+}
+
+.carousel-images {
+    display: flex;
+    width: calc(100% * 6);
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images div {
+    width: 100%;
+    height: 350px;
+    flex-shrink: 0;
+    background-color: #333;
+}
+
+.carousel-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+footer {
+    background-color: #1e1e2f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-icons a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
