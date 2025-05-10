@@ -1,3 +1,4 @@
+console.log("product");
 const products = [
     { id: 1, name: "Mango", price: 15.5, inStock: true, image: "../Image/img.png", category: "offer" },
     { id: 2, name: "Apple", price: 10.0, inStock: false, image: "../Image/img.png", category: "topSold" },

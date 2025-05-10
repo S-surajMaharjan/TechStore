@@ -1,3 +1,4 @@
+console.log("content");
 let count=0;
 //let page="all";
   function idElement(idData){
