@@ -2,6 +2,7 @@ console.log("content");
 let count = 0;
 
 function idElement(idData) {
+  
   const container = document.getElementById(idData);
   const filteredProducts = products.filter(product => product.category === idData);
   count = 0;
