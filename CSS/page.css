@@ -29,11 +29,26 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-
+/* Logo of all page */
 .logo {
-    font-size: 28px;
-    font-weight: bold;
+  color: white;               /* White text */
+  text-decoration: none;      /* Remove underline */
+  font-size: 28px;            /* Bigger font size */
+  font-weight: 700;           /* Bold */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean modern font */
+  padding: 10px 15px;         /* Some padding around */
+  background-color: #1e1e2f;  /* Match the overall background */
+  border-radius: 6px;         /* Slightly rounded corners */
+  display: inline-block;      /* So padding applies nicely */
+  cursor: pointer;            /* Pointer on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
 }
+
+.logo:hover {
+  background-color: #343454;  /* Slightly lighter background on hover */
+  color: #ddd;                /* Light text on hover */
+}
+
 
 .search-bar input {
     padding: 8px;
