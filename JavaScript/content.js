@@ -1,14 +1,21 @@
-console.log("content");
-let count = 0;
-
 function idElement(idData) {
-  
   const container = document.getElementById(idData);
+  if (!container) {
+    console.warn(`Container with id "${idData}" not found.`);
+    return; // Stop if container doesn't exist
+  }
+
+  // Clear previous content to avoid duplicate cards on multiple calls
+  container.innerHTML = "";
+
+  // Filter products by category matching idData
   const filteredProducts = products.filter(product => product.category === idData);
-  count = 0;
+  let count = 0;
 
   filteredProducts.forEach(product => {
-    if ((page === "all") || (count < 3 && page === "main")) {
+    // Show all products if page is 'all'
+    // If on main page, show max 3 products per category
+    if (page === "all" || (page === "main" && count < 3)) {
       const card = document.createElement("div");
       card.className = "grid-item";
 
