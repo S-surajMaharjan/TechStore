@@ -24,7 +24,9 @@ function idElement(idData) {
         <h3>${product.name}</h3>
         <div class="card-footer">
           <p class="text-container">Price: $${product.price}</p>
-          <button onclick="addCart(${product.id})">Add to Cart</button>
+
+          <button class="addToCart " onclick="addCart(${product.id})">Add to Cart</button>
+
         </div>
       `;
 

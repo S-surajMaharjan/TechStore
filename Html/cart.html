@@ -6,54 +6,32 @@
     <title>Cart</title>
 </head>
 <body>
+  <link rel="stylesheet" href="../CSS/grid.css">
     <link rel="stylesheet" href="../CSS/page.css">
     <header>
     <a href="Index.html" class="logo">TechStore</a>
 
     <div class="search-bar">
-      <input type="text" placeholder="Search for products..." />
+    <input type="text" placeholder="Search for products..." />
     </div>
     <div class="nav-icons">
-      <a href="login.html" class="logo"><span>👤 Login</span></a>
+    <a href="login.html" class="logo"><span>👤 Login</span></a>
     </div>
   </header>
 <main>
-    <label for=""> Add</label>
-<button onclick="
-
-">Add</button>
-<p id="Show">hello</p>
-</main>
-     <footer>
-    <p>Contact us: support@techstore.com | +1 (123) 456-7890</p>
-    <div class="footer-icons">
-
+    <div class="grid-section">
+    <h3>Cart Item</h3>
+    <div id="cart" class="grid"></div>
     </div>
+</main>
+  <footer>
+  <p>Contact us: support@techstore.com | +1 (123) 456-7890</p>
+  <div class="footer-icons">
+
+  </div>
   </footer>
-    <script src="product.js"></script>
-    <script>
-  let cart=[];
-    function addCart(raam){
-        cart.push(raam);
-        Show(cart);
-    }
-     function Show(cart){
-         let ShowData=document.getElementById("Show");
-         ShowData.innerHTML=``;
+  <script src="../JavaScript/product.js" defer></script>
+  <script src="../JavaScript/cart.js" defer></script>
 
-         cart.forEach(item => {
-            ShowData.innerHTML += `
-        <div>
-          <strong>${item.name}</strong><br>
-          Price: $${item.price}<br>
-          Category: ${item.category}<br>
-          In stock: ${item.inStock ? "Yes" : "No"}
-          <hr>
-        </div>
-      `;
-         });
-     }
-
-    </script>
 </body>
 </html>
