@@ -1,132 +1,244 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Remove underline from all header links */
+header a {
+  text-decoration: none;
 }
-
-html, body {
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7f6;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
-
-main {
-    flex: 1;
-    padding: 20px;
-}
-
+/* HEADER CONTAINER */
 header {
-    background-color: #1e1e2f;
-    color: white;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #1e1e2f;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  gap: 20px;
 }
-/* Logo of all page */
+
+main{
+  flex: 1;
+}
+
+/* LOGO */
 .logo {
-  color: white;               /* White text */
-  text-decoration: none;      /* Remove underline */
-  font-size: 28px;            /* Bigger font size */
-  font-weight: 700;           /* Bold */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean modern font */
-  padding: 10px 15px;         /* Some padding around */
-  background-color: #1e1e2f;  /* Match the overall background */
-  border-radius: 6px;         /* Slightly rounded corners */
-  display: inline-block;      /* So padding applies nicely */
-  cursor: pointer;            /* Pointer on hover */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  flex-shrink: 0; /* Prevent logo from shrinking */
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px 15px;
+  background-color: #1e1e2f;
+  border-radius: 6px;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .logo:hover {
-  background-color: #343454;  /* Slightly lighter background on hover */
-  color: #ddd;                /* Light text on hover */
+  background-color: #343454;
+  color: #ddd;
 }
 
+/* SEARCH BAR CONTAINER */
+.search-bar {
+  flex-grow: 1;      /* Take up remaining space */
+  flex-shrink: 1;    /* Allow shrinking */
+  min-width: 150px;  /* Minimum width for usability */
+  max-width: 500px;  /* Max width to keep neat */
+}
 
+/* SEARCH INPUT FULL WIDTH */
 .search-bar input {
-    padding: 8px;
-    width: 300px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
 
+/* NAV ICONS CONTAINER FOR LOGIN + CART */
 .nav-icons {
-    display: flex;
-    gap: 20px;
-    font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
-.nav-icons span {
-    cursor: pointer;
-    font-weight: 600;
+/* LOGIN TEXT */
+.nav-icons .login {
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #1e1e2f;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+.nav-icons .login:hover {
+  background-color: #343454;
+  color: #ddd;
 }
 
-.carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    height: 350px;
-    margin: 20px 0;
+/* CART LINK CONTAINER */
+.cart-link {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  user-select: none;
 }
 
-.carousel-images {
-    display: flex;
-    width: calc(100% * 6);
-    transition: transform 0.5s ease-in-out;
+/* CART ICON SIZE AND POSITIONING CONTEXT */
+.cart-icon {
+  width: 30px;
+  position: relative; /* Make this the reference for the badge */
 }
 
-.carousel-images div {
-    width: 100%;
-    height: 350px;
-    flex-shrink: 0;
-    background-color: #333;
+/* CART IMAGE */
+.cart-icon img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.carousel-buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+/* CART QUANTITY BADGE ABOVE CART ICON */
+.cart-quantity {
+  position: absolute;
+  top: -8px;
+  right: 0px;  /* moved a bit left from -8px */
+  background-color: orange;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
 }
 
-.carousel-button {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
-    font-size: 20px;
+/* Cart text styling */
+.cart-text {
+  font-size: 16px;
+  font-weight: 600;
 }
 
+/* Footer styling */
 footer {
-    background-color: #1e1e2f;
-    color: white;
-    text-align: center;
-    padding: 20px;
+  background-color: #1e1e2f;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
+/* Footer paragraph */
 footer p {
-    font-size: 14px;
-    margin-bottom: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
+/* Footer icons container */
 .footer-icons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
 }
 
+/* Footer icons */
 .footer-icons a {
-    color: white;
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+
+/* Responsive adjustments for small screens */
+@media (max-width: 450px) {
+  header {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    gap: 10px;
+  }
+  .search-bar {
+    min-width: 100%;
+    max-width: 100%;
+    order: 3; /* put search bar below logo and nav */
+  }
+  .logo {
+    flex-grow: 1;
+    order: 1;
     font-size: 24px;
-    text-decoration: none;
+  }
+  .nav-icons {
+    order: 2;
+    gap: 15px;
+  }
+  .nav-icons .login, .cart-text {
+    font-size: 14px;
+  }
+  .cart-icon {
+    width: 25px;
+  }
+}
+
+
+
+
+
+
+
+/* Carousel container */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 350px;
+  margin: 20px 0;
+}
+
+/* Carousel images container */
+.carousel-images {
+  display: flex;
+  width: calc(100% * 6);            /* 6 images */
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Each carousel image */
+.carousel-images div {
+  width: 100%;
+  height: 350px;
+  flex-shrink: 0;
+  background-color: #333;
+}
+
+/* Carousel navigation buttons */
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+/* Carousel button styling */
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 20px;
 }
