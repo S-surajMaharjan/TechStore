@@ -11,21 +11,30 @@
 </head>
 <body>
   <header>
-    <a href="Index.html" class="logo">TechStore</a>
+  <a href="Index.html" class="logo">TechStore</a>
 
-    <div class="search-bar">
-      <input type="text" placeholder="Search for products..." />
-    </div>
-    <div class="nav-icons">
-          <a href="cart.html" class="logo"><span>🛒 Cart</span></a>
-      <a href="login.html" class="logo"><span>👤 Login</span></a>
-    </div>
-  </header>
+  <div class="search-bar">
+    <input type="text" placeholder="Search products..." />
+  </div>
+
+  <div class="nav-icons">
+    <a href="login.html"><div class="login">Login</div></a>
+
+    <a href="cart.html" class="cart-link login" aria-label="Cart">
+      <div class="cart-icon ">
+        <img src="../Image/cart-icon.png" alt="Cart Icon" />
+        <div class="cart-quantity cartQuantity">0</div>
+      </div>
+      <div class="cart-text">Cart</div>
+    </a>
+  </div>
+</header>
+
 
   <main>
 
     <div class="grid-section">
-      <h3>Computers <a href="computers.html">More →</a></h3>
+      <h3>Computers</h3>
       <div id="computers" class="grid"></div>
     </div>
 
@@ -39,8 +48,8 @@
   </footer>
 
   <script src="../JavaScript/product.js" defer></script>
-  <script src="../JavaScript/cart.js" defer></script>
   <script src="../JavaScript/content.js" defer></script>
   <script src="../JavaScript/computer.js" defer></script>
+  <script src="../JavaScript/cart.js" defer></script>
 </body>
 </html>

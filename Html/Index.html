@@ -6,24 +6,25 @@
   <meta name="description" content="TechStore: Your one-stop online store for laptops, computers, and accessories." />
   <meta name="author" content="TechStore" />
   <title>TechStore</title>
+  <link rel="stylesheet" href="../CSS/carousel.css">
   <link rel="stylesheet" href="../CSS/grid.css" />
   <link rel="stylesheet" href="../CSS/page.css" />
 </head>
 <body>
   <header>
-  <a href="#" class="logo">TechStore</a>
+  <a href="Index.html" class="logo">TechStore</a>
 
   <div class="search-bar">
     <input type="text" placeholder="Search products..." />
   </div>
 
   <div class="nav-icons">
-    <div class="login">Login</div>
+    <a href="login.html"><div class="login">Login</div></a>
 
     <a href="cart.html" class="cart-link login" aria-label="Cart">
       <div class="cart-icon ">
         <img src="../Image/cart-icon.png" alt="Cart Icon" />
-        <div class="cart-quantity">3</div>
+        <div class="cart-quantity cartQuantity">0</div>
       </div>
       <div class="cart-text">Cart</div>
     </a>
@@ -32,20 +33,20 @@
 
 
   <main>
-    <div class="carousel">
+    <!-- <div class="carousel">
       <div class="carousel-images" id="carousel-images">
-        <div style="background-color:#4caf50;"></div>
-        <div style="background-color:#2196f3;"></div>
-        <div style="background-color:#ff9800;"></div>
-        <div style="background-color:#4caf50;"></div>
-        <div style="background-color:#2196f3;"></div>
-        <div style="background-color:#ff9800;"></div>
+        <div style="background-image:url(../Image/img1.png) "></div>
+        <div style="background-image:url(../Image/img1.png)"></div>
+        <div style="background-image:url(../Image/img1.png)"></div>
+        <div style="background-image:url(../Image/img1.png)"></div>
+        <div style="background-image:url(../Image/img1.png)"></div>
+        <div style="background-image:url(../Image/img1.png)"></div>
       </div>
       <div class="carousel-buttons">
         <button class="carousel-button" id="prevButton">←</button>
         <button class="carousel-button" id="nextButton">→</button>
       </div>
-    </div>
+    </div> -->
 
     <div class="grid-section">
       <h3>🔥 Offer Items <a href="OfferItem.html">More →</a></h3>
@@ -79,7 +80,9 @@
 
     </div>
   </footer>
-
+  <script>
+      let page="main";
+  </script>
   <script src="../JavaScript/product.js" defer></script>
   <script src="../JavaScript/carousel.js" defer></script>
   <script src="../JavaScript/cart.js" defer></script>

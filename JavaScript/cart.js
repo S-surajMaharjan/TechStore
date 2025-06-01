@@ -1,4 +1,13 @@
-let cartItem = [ { id: 3, name: "MacBook Air M1", price: 899.99, inStock: true, image: "../Image/img3.png", category: "topSold" },];
+let cartItem=[];
+
+if(localStorage.getItem("cart")){
+  cartItem = JSON.parse(localStorage.getItem("cart"))
+  let CartQuantity = JSON.parse(localStorage.getItem("quantity"))
+  document.querySelector('.cartQuantity').innerHTML= CartQuantity;
+}else{
+  let CartQuantity=0;
+}
+// function to add items in cart and update the number in above cart
 function addCart(id) {
   let item = products.find(p => p.id == id);
   let copyItem = { ...item, quantity: 1 };
@@ -12,11 +21,28 @@ function addCart(id) {
     });
   } else {
     cartItem.push(copyItem);
-    
   }
-  displayCart();
+    CartQuantity=0;
+    //to update the number above cart
+    cartItem.forEach(p=>{
+      CartQuantity += p.quantity;
+    });
+    localStorage.setItem("quantity",JSON.stringify(CartQuantity))
+
+
+    //updating the number above cart
+    document.querySelector('.cartQuantity').innerHTML= CartQuantity;
+
+    //saving the cartItem in localStorage to get cart even after page refresh
+    toMemory();
 }
+//function to save data to localStorage
+ function toMemory(){
+  localStorage.setItem('cart',JSON.stringify(cartItem));
+ };
+
 //  Creating content fot cart Html
+if(page=="cart"){
 const cartDisplay = document.getElementById('cart');
 function displayCart() {
   cartDisplay.innerHTML = "";
@@ -35,6 +61,6 @@ function displayCart() {
 `;
   cartDisplay.appendChild(card);
 })
-console.log(cartDisplay.innerHTML)
 };
 displayCart()
+}
